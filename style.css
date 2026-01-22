@@ -1,0 +1,397 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* BACKGROUND */
+body {
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #cfe8ff, #eaf4ff);
+    padding-top: 110px; /* ruang navbar fixed */
+}
+
+/* NAVBAR */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+
+    margin: 16px;
+    padding: 12px 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: #4f6fd8;
+    border-radius: 16px;
+    color: white;
+
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* LOGO */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.logo-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: transparent; /* HILANGKAN HITAM */
+}
+
+.logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* MENU */
+.menu-container {
+    position: relative;
+}
+
+.menu-btn {
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: absolute;
+    right: 0;
+    top: 40px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    display: none;
+    flex-direction: column;
+    min-width: 200px;
+    z-index: 10;
+}
+
+.dropdown a {
+    padding: 12px 16px;
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+}
+
+.dropdown a:hover {
+    background-color: #f0f4ff;
+}
+
+.dropdown.show {
+    display: flex;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 0 20px;
+}
+
+.icon-box {
+    width: 10px;
+    height: auto;
+    margin: 0 auto 30px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 55px;
+}
+
+.welcome {
+    color: #4f6fd8;
+    margin-bottom: 10px;
+}
+
+h1 {
+    color: #3b5ccc;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 12px;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* hover yang 3 kotak */
+.stat-cards .card {
+    transition: 
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.stat-cards .card:hover {
+    transform: scale(1.08);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+}
+
+.stat-cards .card:hover {
+    transform: scale(1.08) translateY(-6px);
+}
+
+/* BUTTON */
+.btn {
+    padding: 12px 28px;
+    border: none;
+    border-radius: 20px;
+    background-color: white;
+    color: #4f6fd8;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.btn:hover {
+    background-color: #4f6fd8;
+    color: white;
+}
+
+/* INFO AWAL */
+.info-awal {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.info-box {
+    max-width: 900px;
+    margin: 0 auto 50px;
+    padding: 30px;
+    border: 4px solid #4f6fd8;
+    border-radius: 16px;
+    background-color: white;
+    color: #1e3a8a;
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+/* STAT CARDS */
+.stat-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: #4f6fd8;
+    color: white;
+    width: 220px;
+    padding: 25px 15px;
+    border-radius: 16px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+/* SECTION */
+.section {
+    padding: 80px 20px;
+    text-align: center;
+    scroll-margin-top: 120px;
+    animation: fadeUp 0.6s ease;
+}
+
+.section h2 {
+    color: #3b5ccc;
+    margin-bottom: 20px;
+}
+
+.placeholder {
+    width: 90%;
+    height: 150px;
+    background-color: rgb(0, 0, 0);
+    margin: auto;
+    border-radius: 12px;
+}
+
+/* ===== STATISTIK LAYOUT ===== */
+.statistik-section {
+    padding-top: 40px;
+}
+
+/* ROW */
+.statistik-row {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+/* CARD UMUM */
+.statistik-card {
+    background-color: white;
+    border: 3px solid #4f6fd8;
+    border-radius: 26px;
+    padding: 25px;
+}
+
+/* CARD BESAR */
+.statistik-card-large {
+    flex: 1;
+    min-width: 320px;
+    text-align: center;
+}
+
+.statistik-card-large h3 {
+    color: #3b5ccc;
+    font-size: 16px;
+}
+
+.statistik-subtitle {
+    font-size: 12px;
+    color: #4f6fd8;
+    margin-bottom: 20px;
+}
+
+/* PLACEHOLDER GRAFIK */
+.chart-placeholder {
+    width: 100%;
+    height: 230px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 13px;
+}
+
+.slider-wrapper {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 30px;
+}
+
+.slider {
+  display: flex;
+  gap: 30px;
+  overflow-x: auto;
+  scroll-behavior: auto;
+  padding-bottom: 25px;
+}
+
+.slider.dragging {
+  cursor: grabbing;
+}
+
+.slider::-webkit-scrollbar {
+  display: none;
+}
+
+.card-slide {
+  min-width: 420px;
+}
+
+/* Scrollbar */
+.scrollbar {
+  height: 10px;
+  background: #dbe9ff;
+  border-radius: 10px;
+  position: relative;
+}
+
+/* FILL SCROLLBAR */
+.scrollbar-fill {
+  position: absolute;
+  height: 100%;
+  width: 0;
+  background: #4e73df;
+  border-radius: 10px;
+  pointer-events: none;
+  transition: width 0.05s linear;
+}
+
+
+.thumb {
+  position: absolute;
+  width: 100px;
+  height: 100%;
+  background: #4e73df;
+  border-radius: 10px;
+  cursor: grab;
+}
+
+.thumb:active {
+  cursor: grabbing;
+}
+
+/* CARD SEDANG */
+.statistik-card-medium {
+    flex: 1;
+    min-width: 300px;
+}
+
+.statistik-card-medium h4 {
+    color: #3b5ccc;
+    margin-bottom: 15px;
+}
+
+.statistik-card-medium ul {
+    padding-left: 20px;
+    font-size: 14px;
+    color: #1e3a8a;
+    line-height: 1.6;
+}
+
+/* CARD LEBAR (KESIMPULAN) */
+.statistik-card-wide {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.chart-placeholder {
+    text-align: center;
+}
+
+.statistik-card-wide h4 {
+    color: #3b5ccc;
+    margin-bottom: 15px;
+}
+
+.statistik-card-medium ul {
+    text-align: left;
+}
+
+.statistik-card-wide ul {
+    justify-content: center;
+    font-size: 14px;
+    color: #1e3a8a;
+    line-height: 1.6;
+}
+
+/* ANIMATION */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
