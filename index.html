@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>D-INFOS</title>
+
+    <!-- FONT POPPINS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo" onclick="scrollToTop()">
+            <div class="logo-icon">
+                <img src="img/logo.jpeg" alt="D-INFOS" class="logo-img">
+            </div>
+            <span>D-INFOS</span>
+        </div>
+
+        <div class="menu-container">
+            <div class="menu-btn" onclick="toggleMenu()">☰</div>
+            <div class="dropdown" id="dropdown">
+                <a href="#beranda">Beranda</a>
+                <a href="#statistik">Statistik</a>
+                <a href="#kasus">Kasus per Kecamatan</a>
+                <a href="#edukasi">Edukasi</a>
+                <a href="#kontak">Kontak Kami</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <main class="hero" id="beranda">
+        <div class="icon-box">
+            <img src="img/d_infos.png" alt="D-INFOS" width="190">
+        </div>
+
+        <p class="welcome">selamat datang di</p>
+        <h1>DIGITAL INFORMASI KESEHATAN</h1>
+        <p class="subtitle">
+            SUKU DINAS KESEHATAN KOTA ADMINISTRASI JAKARTA SELATAN
+        </p>
+
+        <!-- BUTTON SCROLL -->
+        <button class="btn" onclick="scrollToInfo()">click here !</button>
+    </main>
+
+    <!-- INFO AWAL (TARGET SCROLL) -->
+    <section class="info-awal" id="info-awal">
+        <div class="info-box">
+            <p>
+                Selamat datang di <strong>D-INFOS (Digital Informasi Kesehatan)</strong> —
+                pusat informasi kesehatan digital yang menyajikan data cepat, akurat,
+                dan mudah dipahami.
+                <br><br>
+                Fokus utama saat ini adalah <strong>Demam Berdarah Dengue (DBD)</strong>
+                di Jakarta Selatan dengan visual data yang informatif.
+            </p>
+        </div>
+
+        <div class="stat-cards">
+            <div class="card">
+                <h3>1528</h3>
+                <p>Total Kasus DBD<br>2025</p>
+            </div>
+            <div class="card">
+                <h3>87</h3>
+                <p>Bulan November<br>2025</p>
+            </div>
+            <div class="card">
+                <h3>70</h3>
+                <p>Bulan Desember<br>2025</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATISTIK -->
+    <section id="statistik" class="section statistik-section">
+
+        <!-- ROW ATAS -->
+        <div class="statistik-row">
+            <div class="statistik-card statistik-card-large">
+                <h3>Tren Kasus DBD Tahun 2025</h3>
+                <p class="statistik-subtitle">Update 11 Januari 2026</p>
+                <div class="chart-placeholder"><canvas id="TrenKasusDbd"></canvas></div>
+            </div>
+
+            <div class="statistik-card statistik-card-large">
+                <h3>Jumlah Kasus DBD per Kecamatan</h3>
+                <p class="statistik-subtitle">Update 11 Januari 2026</p>
+                <div class="chart-placeholder"><canvas id="KasusDbdKecamatan"></canvas></div>
+            </div>
+        </div>
+
+        <!-- ROW TENGAH -->
+        <div class="statistik-row">
+            <div class="statistik-card statistik-card-medium">
+                <h4>Analisis Tren</h4>
+                <ul>
+                    <li>Peningkatan kasus terjadi pada Mei–Juli.</li>
+                    <li>Cuaca lembap memicu perkembangbiakan nyamuk.</li>
+                    <li>Perlu penguatan pencegahan dini.</li>
+                </ul>
+            </div>
+
+            <div class="statistik-card statistik-card-medium">
+                <h4>Perbandingan Bulanan</h4>
+                <ul>
+                    <li>6 kecamatan mengalami penurunan.</li>
+                    <li>3 kecamatan mengalami peningkatan.</li>
+                    <li>Wilayah prioritas masih perlu perhatian.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ROW BAWAH -->
+        <div class="statistik-row">
+            <div class="statistik-card statistik-card-wide">
+                <h4>Kesimpulan</h4>
+                <ul>
+                    <li>DBD masih berpotensi meningkat saat musim hujan.</li>
+                    <li>Penerapan 3M Plus harus terus digencarkan.</li>
+                    <li>Kolaborasi masyarakat dan pemerintah sangat penting.</li>
+                </ul>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- KASUS -->
+    <section id="kasus" class="section">
+ <div class="statistik-row">
+            <div class="statistik-card statistik-card-large">
+                <h3>Proporsi Kasus DBD Tahun 2025 Berdasarkan Kelamin</h3>
+                <p class="statistik-subtitle">Update 11 Januari 2026</p>
+                <div class="chart-placeholder"><canvas id="KasusDbdGender"></canvas></div>
+            </div>
+
+            <div class="statistik-card statistik-card-large">
+                <h3>Jumlah Kasus DBD per Kecamatan</h3>
+                <p class="statistik-subtitle">Update 11 Januari 2026</p>
+                <div class="chart-placeholder"><canvas id="KasusDbdGenderUmur"></canvas></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDER DATA TAMBAHAN -->
+<section class="section">
+  <h2 style="text-align:center;">Kasus DBD Per Kecamatan</h2>
+
+  <div class="slider-wrapper">
+
+    <div class="slider" id="sliderTambahan">
+
+      <!-- 10 CARD -->
+      <div class="statistik-card statistik-card-large card-slide">
+        <h4>Data 1</h4>
+        <canvas id="chartExtra1"></canvas>
+      </div>
+
+      <div class="statistik-card statistik-card-large card-slide">
+        <h4>Data 2</h4>
+        <canvas id="chartExtra2"></canvas>
+      </div>
+
+      <div class="statistik-card statistik-card-large card-slide">
+        <h4>Data 3</h4>
+        <canvas id="chartExtra3"></canvas>
+      </div>
+
+      <div class="statistik-card statistik-card-large card-slide">
+        <h4>Data 4</h4>
+        <canvas id="chartExtra4"></canvas>
+      </div>
+
+      <div class="statistik-card statistik-card-large card-slide">
+        <h4>Data 5</h4>
+        <canvas id="chartExtra5"></canvas>
+      </div>
+
+      <div class="statistik-card statistik-card-large card-slide">
+        <h4>Data 6</h4>
+        <canvas id="chartExtra6"></canvas>
+      </div>
+
+      <div class="statistik-card statistik-card-large card-slide">
+        <h4>Data 7</h4>
+        <canvas id="chartExtra7"></canvas>
+      </div>
+
+      <div class="statistik-card statistik-card-large card-slide">
+        <h4>Data 8</h4>
+        <canvas id="chartExtra8"></canvas>
+      </div>
+
+      <div class="statistik-card statistik-card-large card-slide">
+        <h4>Data 9</h4>
+        <canvas id="chartExtra9"></canvas>
+      </div>
+
+      <div class="statistik-card statistik-card-large card-slide">
+        <h4>Data 10</h4>
+        <canvas id="chartExtra10"></canvas>
+      </div>
+
+    </div>
+
+    <!-- DRAG BAR -->
+    <div class="scrollbar">
+      <div class="thumb" id="thumbTambahan"></div>
+    </div>
+    
+
+  </div>
+</section>
+
+    <!-- EDUKASI -->
+    <section id="edukasi" class="section">
+        <h2>Edukasi</h2>
+        <div class="placeholder"></div>
+    </section>
+
+    <!-- KONTAK -->
+    <section id="kontak" class="section">
+        <h2>Kontak Kami</h2>
+        <div class="placeholder"></div>
+    </section>
+    
+<!-- js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
