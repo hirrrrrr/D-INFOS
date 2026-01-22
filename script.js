@@ -18,9 +18,9 @@ function toggleMenu() {
         };
 
         // Pastikan halaman selalu mulai dari atas
-        //window.onbeforeunload = function () {
-        //    window.scrollTo(0, 0);
-        //} 
+        window.onbeforeunload = function () {
+            window.scrollTo(0, 0);
+        } 
        // Chart.js untuk grafik tren kasus DBD
 
         // Tren Kasus
@@ -210,4 +210,11 @@ function toggleMenu() {
 
         const ratio = slider.scrollLeft / maxScroll;
         thumb.style.left = ratio * maxX + 'px';
+});
+
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+  const status = document.getElementById("formStatus");
+  status.textContent = "Pesan berhasil dikirim. Terima kasih!";
+  this.reset();
 });
