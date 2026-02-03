@@ -1,5 +1,3 @@
-
-
 function toggleMenu() {
             document.getElementById("dropdown").classList.toggle("show");
         };
@@ -19,7 +17,7 @@ function toggleMenu() {
 
         // Pastikan halaman selalu mulai dari atas
         window.onbeforeunload = function () {
-            window.scrollTo(0, 0);
+           window.scrollTo(0, 0);
         } 
        // Chart.js untuk grafik tren kasus DBD
 
@@ -86,15 +84,15 @@ function toggleMenu() {
         values:[3, 1, 4, 0, 1, 1], },
 
         { title:'Kecamatan Jagakarsa', 
-        labels:['Cipedak','Jagakarsa','Lenteng Agung','Tnjung Barat', 'Srengseng Sawah', 'Ciganjur'], 
+        labels:['Cipedak','Jagakarsa','Lenteng Agung','Tanjung Barat', 'Srengseng Sawah', 'Ciganjur'], 
         values:[2,1,0,0,0,0], },
 
         { title:'Kecamatan Mampang Prapatan', 
-        labels:['Pela Mampang','Tegal Mampang','Mampang Prapatam','Bangka', 'Kungingan Barat'], 
+        labels:['Pela Mampang','Tegal Mampang','Mampang Prapatan','Bangka', 'Kungingan Barat'], 
         values:[3,3,9,1,1] },
         
         { title:'Kecamatan Pasar Minggu', 
-        labels:['Pejaten Timur','Cilandak Timur','Pejaten Barat','Kebagusa', 'Jati Padang', 'Pasar Minggu', 'Ragunan'], 
+        labels:['Pejaten Timur','Cilandak Timur','Pejaten Barat','Kebagusan', 'Jati Padang', 'Pasar Minggu', 'Ragunan'], 
         values:[7,3,0,1,0,2,1] },
 
         { title:'Kecamatan Pesanggrahan', 
@@ -210,11 +208,58 @@ function toggleMenu() {
 
         const ratio = slider.scrollLeft / maxScroll;
         thumb.style.left = ratio * maxX + 'px';
+        });
+
+        document.getElementById("contactForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+        const status = document.getElementById("formStatus");
+        status.textContent = "Pesan berhasil dikirim. Terima kasih!";
+        this.reset();
+        });
+
+        // ===== Card Carrousel =====
+const cards = document.querySelectorAll('#edukasi .carousel-card');
+const prevBtn = document.querySelector('#edukasi .prev');
+const nextBtn = document.querySelector('#edukasi .next');
+
+let currentIndex = 0;
+const total = cards.length;
+
+function updateCarousel() {
+  cards.forEach((card, index) => {
+    card.classList.remove('center', 'left', 'right', 'back');
+
+    // hitung jarak melingkar
+    let diff = index - currentIndex;
+
+    if (diff < -Math.floor(total / 2)) diff += total;
+    if (diff > Math.floor(total / 2)) diff -= total;
+
+    if (diff === 0) {
+      card.classList.add('center');
+    } 
+    else if (diff === -1) {
+      card.classList.add('left');
+    } 
+    else if (diff === 1) {
+      card.classList.add('right');
+    } 
+    else {
+      card.classList.add('back');
+    }
+  });
+}
+
+// NAVIGATION
+prevBtn.addEventListener('click', () => {
+  currentIndex = (currentIndex - 1 + total) % total;
+  updateCarousel();
 });
 
-document.getElementById("contactForm").addEventListener("submit", function(e) {
-  e.preventDefault();
-  const status = document.getElementById("formStatus");
-  status.textContent = "Pesan berhasil dikirim. Terima kasih!";
-  this.reset();
+nextBtn.addEventListener('click', () => {
+  currentIndex = (currentIndex + 1) % total;
+  updateCarousel();
 });
+
+// INIT
+updateCarousel();
