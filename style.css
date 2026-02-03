@@ -127,7 +127,7 @@ h1 {
 
 .subtitle {
     font-size: 12px;
-    color: #555;
+    color: #3b5ccc;
     margin-bottom: 30px;
 }
 
@@ -177,7 +177,7 @@ h1 {
     border: 4px solid #4f6fd8;
     border-radius: 16px;
     background-color: white;
-    color: #1e3a8a;
+    color: #000102;
     line-height: 1.7;
     font-size: 14px;
 }
@@ -192,7 +192,7 @@ h1 {
 
 .card {
     background-color: #4f6fd8;
-    color: white;
+    color: rgb(255, 255, 255);
     width: 220px;
     padding: 25px 15px;
     border-radius: 16px;
@@ -215,6 +215,7 @@ h1 {
 .section h2 {
     color: #3b5ccc;
     margin-bottom: 20px;
+    font-style: bold;
 }
 
 .placeholder {
@@ -254,13 +255,13 @@ h1 {
 }
 
 .statistik-card-large h3 {
-    color: #3b5ccc;
+    color: #000000;
     font-size: 16px;
 }
 
 .statistik-subtitle {
     font-size: 12px;
-    color: #4f6fd8;
+    color: #000000;
     margin-bottom: 20px;
 }
 
@@ -342,14 +343,14 @@ h1 {
 }
 
 .statistik-card-medium h4 {
-    color: #3b5ccc;
+    color: #000000;
     margin-bottom: 15px;
 }
 
 .statistik-card-medium ul {
     padding-left: 20px;
     font-size: 14px;
-    color: #1e3a8a;
+    color: #000000;
     line-height: 1.6;
 }
 
@@ -365,7 +366,7 @@ h1 {
 }
 
 .statistik-card-wide h4 {
-    color: #3b5ccc;
+    color: #000000;
     margin-bottom: 15px;
 }
 
@@ -376,7 +377,7 @@ h1 {
 .statistik-card-wide ul {
     justify-content: center;
     font-size: 14px;
-    color: #1e3a8a;
+    color: #000000;
     line-height: 1.6;
 }
 
