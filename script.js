@@ -228,7 +228,7 @@ const total = cards.length;
 function updateCarousel() {
   cards.forEach((card, index) => {
     card.classList.remove('center', 'left', 'right', 'back');
-
+    
     // hitung jarak melingkar
     let diff = index - currentIndex;
 
