@@ -250,6 +250,58 @@ function updateCarousel() {
   });
 }
 
+// AKSI WILAYAH
+const aksiCards = document.querySelectorAll('#aksi .aksi-card');
+const aksiContainer = document.getElementById('aksiCarousel');
+
+let aksiIndex = 0;
+const aksiTotal = aksiCards.length;
+let aksiInterval;
+
+// Update posisi card
+function updateAksiCarousel() {
+  aksiCards.forEach((card, index) => {
+    card.classList.remove('center','left','right','back');
+
+    let diff = index - aksiIndex;
+
+    if (diff < -Math.floor(aksiTotal / 2)) diff += aksiTotal;
+    if (diff > Math.floor(aksiTotal / 2)) diff -= aksiTotal;
+
+    if (diff === 0) {
+      card.classList.add('center');
+    }
+    else if (diff === -1) {
+      card.classList.add('left');
+    }
+    else if (diff === 1) {
+      card.classList.add('right');
+    }
+    else {
+      card.classList.add('back');
+    }
+  });
+}
+
+// Start slide
+function startAksiSlide() {
+  aksiInterval = setInterval(() => {
+    aksiIndex = (aksiIndex + 1) % aksiTotal;
+    updateAksiCarousel();
+  }, 3000);
+}
+// Stop slide
+function stopAksiSlide() {
+  clearInterval(aksiInterval);
+}
+// Hover
+aksiContainer.addEventListener('mouseenter', stopAksiSlide);
+aksiContainer.addEventListener('mouseleave', startAksiSlide);
+
+// INIT
+updateAksiCarousel();
+startAksiSlide();
+
 // NAVIGATION
 prevBtn.addEventListener('click', () => {
   currentIndex = (currentIndex - 1 + total) % total;
