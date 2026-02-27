@@ -14,9 +14,12 @@ function toggleMenu() {
                 behavior: "smooth"
             });
         };
+
+        // Pastikan halaman selalu mulai dari atas
         window.onbeforeunload = function () {
            window.scrollTo(0, 0);
         } 
+       // Chart.js untuk grafik tren kasus DBD
 
         // Tren Kasus
         new Chart(document.getElementById('TrenKasusDbd'), {
@@ -312,4 +315,3 @@ nextBtn.addEventListener('click', () => {
 
 // INIT
 updateCarousel();
-
