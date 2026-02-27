@@ -381,6 +381,45 @@ h1 {
     line-height: 1.6;
 }
 
+/* PETA PERSEBARAN */
+
+.peta-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+/* CARD */
+.peta-card {
+    width: 48%;
+    min-width: 400px;
+    max-width: 1000px;
+    height: 125vh;       
+    max-height: 900px;
+    background: white;
+    border: 4px solid #4f6fd8;
+    border-radius: 10px;
+    overflow: hidden;   
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+/* IFRAME FULL */
+.peta-card iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1000px) {
+    .peta-card {
+        width: 100%;
+        height: 70vh;
+    }
+}
+
 /* SECTION EDUKASI */
 #edukasi .carousel-section {
   width: 100%;
@@ -529,7 +568,6 @@ h1 {
 }
 
 /* POSISI */
-
 .aksi-card.center {
   transform: translateX(-50%) scale(1);
   z-index: 5;
