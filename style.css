@@ -214,7 +214,8 @@ h1 {
 
 .section h2 {
     color: #3b5ccc;
-    margin-bottom: 20px;
+    font-size: 30px;
+    margin-bottom: 30px;
     font-style: bold;
 }
 
@@ -693,6 +694,7 @@ h1 {
         transform: translateY(0);
     }
 }
+
 
 
 
